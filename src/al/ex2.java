@@ -2,24 +2,39 @@ package al;
 import java.util.*;
 
 public class ex2 {
-
+	//20 7 23 19 10 15 25 8 13
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		int[] nan = new int[9];
-		
+
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int sum=0;
+		int ch1=0;int ch2=0;
+
 		for(int i=0;i<9;i++) {
-			nan[i]=sc.nextInt();
+			list.add(sc.nextInt());
+			sum=sum+list.get(i);
 		}
-		//20 7 23 19 10 15 25 8 13
+
 		for(int i=0;i<8;i++) {
 			for(int j=i+1;j<9;j++) {
-				if(100-nan[i]-nan[j]==100) {
-					System.out.println(nan[i]+" "+nan[j]);
+				
+				if((sum-list.get(i)-list.get(j))==100) {
+					//System.out.println(list.get(i)+" "+list.get(j));	
+					//System.out.println(i+" "+j);
+					ch1=i;ch2=j;
 				}
-			}//for1
-		}//for2
+			}
+		}//for
+
+		ch2--;
+		list.remove(ch1);
+		list.remove(ch2);
 		
+		list.sort(null);
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i)+" ");
+		}
+
 	}
 
 }
