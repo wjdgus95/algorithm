@@ -7,14 +7,14 @@ public class ex9 {
 		int n=sc.nextInt();
 		int cnt=0;
 		
-		while(n>0) {			
+		while(n>0) {
+			cnt++;
 			if(String.valueOf(cnt).contains("666")) {
 				n--;
-			}			
-			cnt++;
+			}
 		}//while
 		
-		System.out.println(cnt-1);
+		System.out.println(cnt);
 	}
 
 }
